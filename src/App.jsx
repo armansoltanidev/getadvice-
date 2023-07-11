@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Message from "./assets/Components/Message";
 
 export default function App() {
   const [advice, setAdvice] = useState("Click GET ADVICE  Butuon");
@@ -10,12 +11,12 @@ export default function App() {
     setCount((c) => c + 1);
   }
   return (
-    <>
-      <h1>{advice}</h1>
-      <button on onClick={getAdvice}>
+    <div className="wrapper">
+      <h1 className="title_advice">{advice}</h1>
+      <button className="button" on onClick={getAdvice}>
         Get Advice
       </button>
-      <p>You Get {count} Advice Now!</p>
-    </>
+      <Message count={count} />
+    </div>
   );
 }
